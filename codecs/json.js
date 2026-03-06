@@ -114,7 +114,7 @@ function init( params ) {
         }, 50 );
 
         return entry.msg;
-    }
+    };
 
     /**
      * Encode message before sending.
