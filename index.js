@@ -8,7 +8,6 @@
 
 var os = require( "os" );
 var packagedef = require( './package.json' );
-var homebridgeLib = require( 'homebridge-lib' );
 const { EveHomeKitTypes } = require( 'homebridge-lib/EveHomeKitTypes' );
 var fakegatoHistory = require( 'fakegato-history' );
 var fs = require( "fs" );
@@ -3294,11 +3293,11 @@ function makeThing( log, accessoryConfig, api ) {
                 service = new Service.CarbonMonoxideSensor(name, subtype);
                 characteristic_CarbonMonoxideDetected(service);
                 addSensorOptionalCharacteristics(service);
-                if (config.topics.getcarbonMonoxideLevel) {
-                    characteristic_carbonMonoxideLevel(service);
+                if (config.topics.getCarbonMonoxideLevel) {
+                    characteristic_CarbonMonoxideLevel(service);
                 }
-                if (config.topics.getcarbonMonoxidePeakLevel) {
-                    characteristic_carbonMonoxidePeakLevel(service);
+                if (config.topics.getCarbonMonoxidePeakLevel) {
+                    characteristic_CarbonMonoxidePeakLevel(service);
                 }
             } else if( configType == 'valve' ) {
                 service = new Service.Valve( name, subtype );
